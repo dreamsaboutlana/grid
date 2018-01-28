@@ -1,0 +1,51 @@
+.grid__header {
+  grid-area: header;
+  background-color: aliceblue;
+}
+
+.grid__footer {
+  grid-area: footer;
+  background-color: greenyellow;
+}
+
+.grid__main {
+  grid-area: main;
+}
+
+.grid__left {
+  grid-area: navigation;
+  background-color:darkred;
+}
+
+.grid__right {
+  grid-area: ads;
+  background-color: yellow;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas: "header header header"
+                        "navigation main ads"
+                        "footer footer footer";
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: 100px
+                      1fr
+                      30px;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-areas: "header"
+                         "navigation"
+                         "main"
+                         "ads"
+                         "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 100px
+                        50px
+                        1fr
+                        50px
+                        30px;
+  }
+}
